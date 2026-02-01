@@ -1,0 +1,79 @@
+# 创建环境
+# conda env create -f environment.yml
+# conda activate langChain1.0
+
+# conda env remove -n langChain1.0
+# conda env create -f environment.yml
+
+name: langChain1.0
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # ======================
+  # 1️⃣ Python 运行时（conda）
+  # ======================
+  - python=3.12
+
+  # ======================
+  # 2️⃣ 底层 & 系统依赖（conda）
+  #    这些用 pip 很容易翻车
+  # ======================
+  - openssl
+  - ca-certificates
+  - certifi
+  - libffi
+  - libcxx
+  - sqlite
+  - zlib
+  - zstd
+  - xz
+  - yaml
+  - ncurses
+  - readline
+  - tk
+  - tzdata
+
+  # ======================
+  # 3️⃣ 基础 Python 工具链（conda）
+  # ======================
+  - pip
+  - setuptools
+  - wheel
+
+  # ======================
+  # 4️⃣ 高风险 C 扩展 / 性能敏感库（conda）
+  # ======================
+  - cffi
+  - brotlicffi
+  - orjson
+  - greenlet
+  - pyyaml
+  - zstandard
+
+  # ======================
+  # 5️⃣ LangChain 核心依赖（conda 能装的）
+  # ======================
+  - langchain
+  - langchain-core
+  - langchain-text-splitters
+  - langsmith
+
+  # ======================
+  # 6️⃣ pip 生态（conda 不全 or 更新更快）
+  # ======================
+  - pip:
+      # ---- LangChain 生态 ----
+      - langchain-openai
+      - openai
+
+      # ---- OpenAI / Tokenizer ----
+      - tiktoken
+
+      # ---- HTTP & 工具 ----
+      - tqdm
+      - regex
+      - distro
+      - jiter
