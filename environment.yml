@@ -1,9 +1,8 @@
 # 创建环境
-# conda env create -f environment.yml
-# conda activate langChain1.0
 
 # conda env remove -n langChain1.0
 # conda env create -f environment.yml
+# conda activate langChain1.0
 
 name: langChain1.0
 
@@ -77,3 +76,5 @@ dependencies:
       - regex
       - distro
       - jiter
+      # ---- 配置 ----
+      - python-dotenv
